@@ -37,6 +37,7 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/semi": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
+    "@typescript-eslint/no-floating-promises": "error",
     "camelcase": "error",
     "func-call-spacing": "off",
     "new-parens": "error",

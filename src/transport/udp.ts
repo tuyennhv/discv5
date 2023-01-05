@@ -45,8 +45,14 @@ export class UDPTransportService
 
   public async send(to: Multiaddr, toId: string, packet: IPacket): Promise<void> {
     const nodeAddr = to.toOptions();
-    return new Promise((resolve) =>
-      this.socket.send(encodePacket(toId, packet), nodeAddr.port, nodeAddr.host, () => resolve())
+    return new Promise((resolve, reject) =>
+      this.socket.send(encodePacket(toId, packet), nodeAddr.port, nodeAddr.host, (e) => {
+        if (e) {
+          reject(e);
+        } else {
+          resolve();
+        }
+      })
     );
   }
 
