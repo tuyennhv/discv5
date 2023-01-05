@@ -52,7 +52,7 @@ typings/
 *.tgz
 
 # Output of `yarn build`
-lib
+# lib
 
 # IDEA folder
 .idea
